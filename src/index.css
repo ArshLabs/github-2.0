@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+  /* Light mode variables */
+  --bg-color: #fff;
+  --text-color: #585858;
+  --card-bg-color: #f0f4f9;
+  --card-text-color: #585858;
+  --card-hover-bg: #dfe4ea;
+  --result-text-color: #404040;
+  --input-bg-color: #f0f4f9;
+  --input-text-color: #585858;
+  --sidebar-bg-color: #f0f4f9;
+  --sidebar-text-color: #282828;
+  --sidebar-item-bg: #e6eaf1;
+  --sidebar-item-hover: #e2e6eb;
+  --icon-invert-filter: none;
+}
+
+/* Dark mode specific variables */
+.dark-mode {
+  --bg-color: #1a1a1a;
+  --text-color: rgb(196, 199, 197);
+  --card-bg-color: #2e2e2e;
+  --card-text-color: rgb(196, 199, 197);
+  --card-hover-bg: #3c3c3c;
+  --result-text-color: rgb(196, 199, 197);
+  --input-bg-color: #2e2e2e;
+  --input-text-color: rgb(196, 199, 197);
+  --sidebar-bg-color: #2b2b2b;
+  --sidebar-text-color: rgb(196, 199, 197);
+  --sidebar-item-bg: #3c3c3c;
+  --sidebar-item-hover: #4a4a4a;
+  --icon-invert-filter: invert(1);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Outfit;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  animation: fadeIn 1.5s;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.sidebar,
+.main {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg-color);
+  color: var(--sidebar-text-color);
+}
+
+.sidebar .new-chat {
+  background-color: var(--sidebar-item-bg);
+  color: var(--sidebar-text-color);
+}
+
+.sidebar .recent-entry {
+  color: var(--sidebar-text-color);
+}
+
+.sidebar .recent-entry:hover {
+  background-color: var(--sidebar-item-hover);
+}
+
+.dark-mode .icon-invertible {
+  filter: var(--icon-invert-filter);
+}
+
+.card {
+  background-color: var(--card-bg-color);
+  color: var(--card-text-color);
+}
+
+.card:hover {
+  background-color: var(--card-hover-bg);
+}
+
+.card .card-icon {
+  background-color: transparent;
+  filter: var(--icon-invert-filter);
+}
+
+.main .nav p {
+  color: var(--text-color);
+}
+
+.main-bottom .search-box {
+  background-color: var(--input-bg-color);
+}
+
+.main-bottom .search-box input {
+  background: transparent;
+  color: var(--input-text-color);
+}
+
+.dark-mode .search-icon {
+  filter: var(--icon-invert-filter);
+}
+
+.result-data p {
+  color: var(--result-text-color);
+}
+
+.dark-mode .user-profile-icon,
+.dark-mode .user-icon-result,
+.dark-mode .gemini-icon-result {
+  filter: none;
+}
+
+.result .loader hr {
+  background: linear-gradient(to right, #9ed7ff, var(--bg-color), #9ed7ff);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
